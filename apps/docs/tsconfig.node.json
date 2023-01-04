@@ -1,0 +1,7 @@
+{
+  "extends": "@vitezilla/tsconfig/node-esm.json",
+  "compilerOptions": {
+    "module": "ESNext"
+  },
+  "include": [".vuepress/**/*.ts"]
+}

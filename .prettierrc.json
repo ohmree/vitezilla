@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "semi": true,
+  "endOfLine": "lf",
+  "printWidth": 120,
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "avoid",
+  "quoteProps": "consistent",
+  "vueIndentScriptAndStyle": false,
+  "htmlWhitespaceSensitivity": "ignore",
+  "pluginSearchDirs": ["."],
+  "plugins": ["prettier-plugin-packagejson"],
+  "overrides": [{ "files": "apps/docs/**/*.md", "options": { "parser": "mdx" } }]
+}

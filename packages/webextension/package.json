@@ -1,0 +1,51 @@
+{
+  "name": "@vitezilla/webextension",
+  "version": "0.15.0",
+  "description": "A mocking toolkit for webextensions leveraging the power of TypeScript to enhance your Vitest experience.",
+  "keywords": [
+    "TypeScript",
+    "webextension-polyfill",
+    "@types/webextension-polyfill",
+    "webextensions",
+    "mock",
+    "deep-mock",
+    "vitest"
+  ],
+  "license": "Zlib",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./setup": {
+      "types": "./dist/setup.d.ts",
+      "require": "./dist/setup.cjs",
+      "import": "./dist/setup.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.9.2",
+    "@vitezilla/tsconfig": "workspace:*",
+    "typescript": "^4.9.4",
+    "unbuild": "^1.0.2",
+    "vitest": "^0.26.2",
+    "vitezilla": "workspace:*"
+  },
+  "peerDependencies": {
+    "vitest": "^0.26.2",
+    "vitezilla": "workspace:*",
+    "webextension-polyfill": "^0.9.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@vitezilla/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Zlib",
+  "dependencies": {
+    "@tsconfig/node18-strictest": "^1.0.0",
+    "@tsconfig/node18-strictest-esm": "^1.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

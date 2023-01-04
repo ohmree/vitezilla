@@ -1,0 +1,7 @@
+{
+  "extends": "@vitezilla/tsconfig/node.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "files": [".eslintrc.cjs"]
+}

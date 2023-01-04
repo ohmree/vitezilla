@@ -1,0 +1,4 @@
+{
+  "*.{{c,m,}{j,t}s{,x},vue,md}": ["eslint --fix", "prettier --write"],
+  "*.{md,json,y{a,}ml}": "prettier --write"
+}
