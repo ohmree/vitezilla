@@ -13,8 +13,8 @@ new_ref=$2
 
 # Exit early if the local branch is behind the remote
 LOCAL=$(git rev-parse @)
-REMOTE=$(git rev-parse '@{u}' 2> /dev/null)
-BASE=$(git merge-base @ '@{u}' 2> /dev/null)
+REMOTE=$(git rev-parse '@{u}' 2> /dev/null || true)
+BASE=$(git merge-base @ '@{u}' 2> /dev/null || true)
 
 if [ "$LOCAL" != "$REMOTE" ] && [ "$LOCAL" = "$BASE" ]; then
   echo 'You are behind origin, not running pnpm-install post-checkout hook.'
