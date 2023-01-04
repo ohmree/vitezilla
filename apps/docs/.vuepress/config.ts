@@ -3,7 +3,7 @@ import theme from './theme';
 import { handleRootAlias } from './utils';
 
 export default defineUserConfig({
-  base: '/',
+  base: '/vitezilla/',
   locales: {
     '/': {
       lang: 'en-US',
