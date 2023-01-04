@@ -36,7 +36,7 @@ This is an example of how a deep mock with Vitezilla looks like:
 
 <!-- #endregion example-text -->
 
-> **Note:**
+> **Note:**\
 > If you want to mock `webextension-polyfill`, please take a look at [`@vitezilla/webextension`](https://ohmree.github.io/vitezilla/webextension/).
 
 `browser.ts`

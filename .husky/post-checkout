@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+# Looks for changes to pnpm-lock.yaml, and automates running pnpm install.
+# Does not run if your local branch is behind the remote.
+# https://gist.github.com/stefansundin/82051ad2c8565999b914
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Exit early if this was only a file checkout, not a branch change ($3 == 1)
+[ "$3" -eq 0 ] && exit 0
+
+old_ref=$1
+new_ref=$2
+
+# Exit early if the local branch is behind the remote
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse '@{u}' 2> /dev/null)
+BASE=$(git merge-base @ '@{u}' 2> /dev/null)
+
+if [ "$LOCAL" != "$REMOTE" ] && [ "$LOCAL" = "$BASE" ]; then
+  echo 'You are behind origin, not running pnpm-install post-checkout hook.'
+  exit 1
+fi
+
+
+changed() {
+  git diff --name-only "$old_ref" "$new_ref" | grep "^$1" > /dev/null 2>&1
+}
+
+if changed 'pnpm-lock.yaml'; then
+  echo 'pnpm-lock.yaml changed, installing'
+  pnpm install
+fi

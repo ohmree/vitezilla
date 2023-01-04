@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# Looks for changes to pnpm-lock.yaml, and automates running pnpm install.
+# https://gist.github.com/stefansundin/82051ad2c8565999b914
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+changed() {
+  git diff --name-only 'HEAD@{2}' HEAD | grep "^$1" > /dev/null 2>&1
+}
+
+if changed 'pnpm-lock.yaml'; then
+  echo 'pnpm-lock.yaml changed, installing'
+  pnpm install
+fi
