@@ -5,7 +5,7 @@
 
 ### Introduction
 
-`vitezilla` contains the core logic of Vitezilla - a mocking toolkit leveraging the power of TypeScript to enhance your Vitest experience.
+The `vitezilla` package contains the core logic of Vitezilla - a mocking toolkit leveraging the power of TypeScript to enhance your Vitest experience.
 
 > **Warning**  
 > This is a **Work In Progress**! The API might change before version 1.0 is released.
